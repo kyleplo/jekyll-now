@@ -4,12 +4,34 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Hello, I am @kyleplo (say Kie-Ull-Pe-El-Oh).
 
-### More Information
+My test account is [@testkyleplo](https://scratch.mit.edu/users/testkyleplo).
+Thank you for 40 followers on Scratch!
+Check out gamefroot! http://gamefroot.com/members/kyleplo
 
-A place to include any other types of information that you'd like to include about yourself.
+For updates, please see my [blog](./index.html)
 
-### Contact me
+## Programming
 
-[email@domain.com](mailto:email@domain.com)
+I use
+- HTML
+- CSS
+- JavaScript
+- Scratch
+- A little of PHP
+
+I have made
+- Websites
+- Games
+- Chrome Extensions
+
+## I am part of...
+
+#BringItBack on Scratch (see [@TipsButton](https://scratch.mit.edu/users/TipsButton))
+
+Prevent Animal Cruelty Studio
+
+Finish my sentence studio
+
+Pixel Reformation
