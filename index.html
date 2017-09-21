@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<h1>Kyleplo</h1>
+<input type="text" id="search" placeholder="Search..." oninput="for(var i = 0;i < document.getElementsByClassName('post').length;i++){document.getElementsByClassName('post')[i].style.display='none';if(document.getElementsByClassName('post')[i].innerHTML.indexOf(this.value) > -1){document.getElementsByClassName('post')[i].style.display='block'}}">
 <div class="posts">
   {% for post in site.posts %}
     <article class="post">
@@ -15,4 +15,5 @@ layout: default
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
     </article>
   {% endfor %}
+  <p>For older posts, see [my old blog](http://kyleploblog.weebly.com)</p>
 </div>
