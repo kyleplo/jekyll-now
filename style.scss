@@ -225,11 +225,12 @@ nav {
   }
 
   a {
-    margin-left: 20px;
     color: $white;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
+    padding: 50px 20px;
+	  &:hover, &:active {background-color: white}
 
     @include mobile {
       margin: 0 10px;
