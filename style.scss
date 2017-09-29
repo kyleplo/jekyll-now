@@ -22,7 +22,9 @@ body {
   font: 18px/1.4 $helvetica;
   color: $darkGray;
 }
-
+::-webkit-scrollbar {width: 1%;}
+::-webkit-scrollbar-thumb {border-radius: 5px;background: #ee8800  }
+::-webkit-scrollbar-track-piece:start{background:linear-gradient(white, #ee8800)}
 .container {
   margin: 0 auto;
   max-width: 740px;
@@ -283,9 +285,6 @@ footer {
   padding: 20px 0;
   text-align: center;
 }
-::-webkit-scrollbar {width: 1%;}
-::-webkit-scrollbar-thumb {border-radius: 5px;background: #ee8800  }
-::-webkit-scrollbar-track-piece:start{background:linear-gradient(white, #ee8800)}
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
