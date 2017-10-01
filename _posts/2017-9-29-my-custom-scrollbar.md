@@ -1,6 +1,7 @@
 ---
 layout: post
 title: My custom scroll
+categories: css scrollbars
 ---
 ### My custom scrollbars
 As you may have noticed, I use a custom scrollbar on this website. I think they are awesome because you can customise your site more. 
