@@ -12,6 +12,13 @@ layout: default
   <div class="date">
     Written on {{ page.date | date: "%B %e, %Y" }}
   </div>
+  
+  <h3>In the categories:</h3>
+  {% for category in page.categories %}
+  <a href="/{{ category | slugize }}/">
+    {{ category }}
+  </a>
+{% endfor %}
 
   {% include disqus.html %}
 </article>
