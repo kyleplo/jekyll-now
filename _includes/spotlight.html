@@ -1,0 +1,4 @@
+{% for spotlight in include.spotlights %}
+<h4><a href="{{spotlight.link}}">{{spotlight.title}}</a></h4>
+<p>{{spotlight.text}}</p>
+{% endfor %}
