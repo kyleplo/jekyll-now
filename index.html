@@ -3,7 +3,7 @@ layout: default
 ---
 <h3>This week's spotlights:</h3>
 {% include spotlight.html spotlights=site.data.spotlights %}
-<input type="text" id="search" placeholder="Search..." oninput="for(var i = 0;i < document.getElementsByClassName('post').length;i++){document.getElementsByClassName('post')[i].style.display='none';if(document.getElementsByClassName('post')[i].innerHTML.indexOf(this.value) > -1){document.getElementsByClassName('post')[i].style.display='block'}};location.hash = this.value">
+<input type="text" id="search" placeholder="Search..." oninput="for(var i = 0;i < document.getElementsByClassName('post').length;i++){document.getElementsByClassName('post')[i].style.display='none';if(document.getElementsByClassName('post')[i].innerHTML.toLowerCase().indexOf(this.value.toLowerCase()) > -1){document.getElementsByClassName('post')[i].style.display='block'}};location.hash = this.value">
 <div class="posts">
   {% for post in site.posts %}
     <article class="post">
@@ -19,4 +19,4 @@ layout: default
   {% endfor %}
   <p>For older posts, see <a href="http://kyleploblog.weebly.com">my old blog</a></p>
 </div>
-<script>setTimeout(function (){if(location.hash){document.getElementById('search').value = location.hash.slice(1);for(var i = 0;i < document.getElementsByClassName('post').length;i++){document.getElementsByClassName('post')[i].style.display='none';if(document.getElementsByClassName('post')[i].innerHTML.indexOf(document.getElementById('search').value) > -1){document.getElementsByClassName('post')[i].style.display='block'}}}},1000)</script>
+<script>setTimeout(function (){if(location.hash){document.getElementById('search').value = location.hash.slice(1);for(var i = 0;i < document.getElementsByClassName('post').length;i++){document.getElementsByClassName('post')[i].style.display='none';if(document.getElementsByClassName('post')[i].innerHTML.toLowerCase().indexOf(document.getElementById('search').value.toLowerCase()) > -1){document.getElementsByClassName('post')[i].style.display='block'}}}},1000)</script>
