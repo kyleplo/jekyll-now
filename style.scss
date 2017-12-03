@@ -33,6 +33,13 @@ body {
   width: 100%;
 }
 
+.banner {
+    padding: 25px;
+    padding-left: 75px;
+    padding-right: 75px;
+    text-align: left;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
   color: $darkerGray;
@@ -160,7 +167,7 @@ img {
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid #ee8800;
 
   @include mobile {
     text-align: center;
