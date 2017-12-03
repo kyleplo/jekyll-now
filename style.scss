@@ -43,6 +43,7 @@ body {
     padding-top: 200px;
     max-height: 500px;
     position: absolute;
+    left:0px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -215,6 +216,8 @@ img {
   font-size: 28px;
   letter-spacing: 1px;
 }
+
+.sitename a:hover {background-color: white}
 
 .site-description {
   margin: -5px 0 0 0;
