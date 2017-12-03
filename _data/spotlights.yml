@@ -1,3 +1,7 @@
+- title: Online Advent Calender
+  link: http://christmas.kyleplogames.com
+  text: Each day, get a quote and a link of the day, from Google Santa Tracker.
+
 - title: Clutter 2.0
   link: https://kyleplo.github.io/clutter-2
   text: Bring back an old Scratch feature...
@@ -5,7 +9,3 @@
 - title: Bring back discuss!
   link: https://scratch.mit.edu/studios/4150641/
   text: Recently, an update was made to the Scratch website in which "Discuss" was removed from the header and put at the bottom of the page for no good reason.
-  
-- title: Poll of the month
-  link: http://blog.kyleplogames.com/?c=poll-of-month
-  text: Every month, I create a new poll. Result are displayed on my blog.
