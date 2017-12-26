@@ -12,7 +12,7 @@ if(j[i].title.startsWith("Comment for " + location.pathname)){
 var commentHtml = '<div class="comment">';
 commentHtml += '<img width="50" height="50" src="' + j[i].user["avatar_url"] + '">';
 commentHtml += '<p><a href="https://github.com/' + j[i].user["login"] + '">@' + j[i].user["login"] + '</a></p>';
-commentHtml += '<p>' + body + '</p>';
+commentHtml += '<p>' + j[i].body + '</p>';
 if(j[i].comments > 0){commentHtml += '<p><a href="' + j[i]["html_url"] + '">See replies</a></p>';console.log("Replies found.")};
 commentHtml += '</div>';
 document.getElementById('comments').innerHTML += commentHtml;
