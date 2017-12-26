@@ -1,8 +1,8 @@
-<h3>Leave a comment:</h3>
+<div class="container"><h3>Leave a comment:</h3>
 <input type="text" id="comment" oninput="var text= this.value.replace(' ',/[+]/g);document.getElementById('post').href='https://github.com/kyleplo/kyleplo.github.io/issues/new?title=Comment+for+' + document.title + ':' + text.slice(0,10) + '&body=' + text;document.getElementById('msg').removeAttribute('hidden');">
 <p id="msg" hidden>You will have to confirm the comment with your Github account. I may have to moderate your comment before displaying it on this page. Markdown is not supported.</p>
 <a href="https://github.com/kyleplo/kyleplo.github.io/issues/new" id="post" target="_blank"><button>Post comment</button></a>
-<div id="comments"></div>
+  <div id="comments"></div></div>
 <!-- <div class="comment"><img width="50" height="50"><p><a href="https://github.com/octocat">@octocat</a></p><p>hi!</p><p><a>See full conversation</a></p></div> -->
 <script>
 fetch("https://api.github.com/repos/kyleplo/kyleplo.github.io/issues?state=closed").then(function (r){return r.json();}).then(function (j){
