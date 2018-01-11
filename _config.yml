@@ -52,7 +52,7 @@ baseurl: ""
 collections:
   demos:
     output: true
-    permalink: /:collection/:name
+    permalink: /c/:collection/:name
 #
 # !! You don't need to change any of the configuration flags below !!
 #
