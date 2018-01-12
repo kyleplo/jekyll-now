@@ -3,8 +3,8 @@ layout: page
 title: Collection Search Test
 ---
 {% for item in site.demos %}
-<h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
-  <p>{{ item.description }}</p>
+<h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
+{% if item.description %} <p>{{ item.description }}</p> {% else %}<p><i>No desciption avaliable...</i></p>{% endif %}
 {% endfor %}
 {% for post in site.posts %}
       <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
