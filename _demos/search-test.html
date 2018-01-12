@@ -2,16 +2,12 @@
 layout: page
 title: Collection Search Test
 ---
-{% for item in site.collections %}
-{% for post in item %}
-<h3><a href="{{ site.baseurl }}{{ item.url }}">{% post.title %}</a></h3>
-<p>{% post.description %}</p>
-<h3></h3>
-{% endfor %}
+{% for item in site.demos %}
+<h3><a href="{{ site.baseurl }}{{ item.url }}">{% item.title %}</a></h3>
+<p>{% item.description %}</p>
 {% endfor %}
 {% for post in site.posts %}
       <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-
       <p>
         {{ post.excerpt }}
       </p>
