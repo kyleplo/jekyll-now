@@ -4,14 +4,15 @@ title: Collection Search Test
 ---
 <h2>Demos</h2>
 {% for item in site.demos %}
-<h3><a href="{{ item.url }}">{{ item.title }}</a><h3>
-    <p>{% if item.description %}{{ item.description }}{% else %}<i>No description avaliable...</i>{% endif %}</p>
+<div class="result">
+<h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
+    <p>{% if item.description %}{{ item.description }}{% else %}<i>No description avaliable...</i>{% endif %}</p></div>
 {% endfor %}
 <h2>Blog</h2>
-{% for post in site.posts %}
+{% for post in site.posts %}<div class="result">
       <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
       <p>
         {{ post.excerpt }}
       </p>
-    </article>
+</div>
   {% endfor %}
