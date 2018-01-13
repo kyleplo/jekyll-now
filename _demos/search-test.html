@@ -4,9 +4,7 @@ title: Collection Search Test
 ---
 {% for collection in site.collections %}
 
-  {% assign name = collection.label %}
-
-    <h2>{{ name }}</h2>
+    <h2>{{ collection.label }}</h2>
 
     {% for page in site.[name] %}
       <h3>{{ page.title }}</h3>
