@@ -8,6 +8,12 @@ title: Collection Search Test
 <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
     <p>{% if item.description %}{{ item.description }}{% else %}<i>No description avaliable...</i>{% endif %}</p></div>
 {% endfor %}
+<h2>Spotlights</h2>
+{% for item in site.data.spotlights %}
+<div class="result">
+<h3><a href="{{ item.link }}">{{ item.title }}</a></h3>
+    <p>{{ item.text }}</p></div>
+{% endfor %}
 <h2>Blog</h2>
 {% for post in site.posts %}<div class="result">
       <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
@@ -16,3 +22,8 @@ title: Collection Search Test
       </p>
 </div>
   {% endfor %}
+<h2>Github</h2>
+<div id="place"></div>
+<div id="temp" hidden><div class="result"><h3><a href="[[link]]">[[name]]</a></h3><p>[[desc]]</p></div></div>
+<script src="https://kyleplo.github.io/auto-website/autowebsite.js"></script>
+<script>autoWebsite("kyleplo","temp","place")</script>
