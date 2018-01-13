@@ -1,8 +1,6 @@
-{% assign count = 0 %}
-{% for spotlight in include.spotlights %}
-{% increment count %}
-{% if count < 4 %}
-<h4><a href="{{spotlight.link}}">{{spotlight.title}}</a></h4>
-<p>{{spotlight.text}}</p>
-{% endif %}
-{% endfor %}
+<h4><a href="{{include.spotlights[1]link}}">{{include.spotlights[1]title}}</a></h4>
+<p>{{include.spotlights[1]text}}</p>
+<h4><a href="{{include.spotlights[2]link}}">{{include.spotlights[2]title}}</a></h4>
+<p>{{include.spotlights[2]text}}</p>
+<h4><a href="{{include.spotlights[3]link}}">{{include.spotlights[3]title}}</a></h4>
+<p>{{include.spotlights[3]text}}</p>
