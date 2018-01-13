@@ -6,9 +6,9 @@ title: Collection Search Test
 
     <h2>{{ collection.label }}</h2>
 
-    {% for page in site[collection.label] %}
-      <h3>{{ page.title }}</h3>
-      <p>{{ page.content | markdownify }}</p>
+    {% for p in site[collection.label] %}
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.content | markdownify }}</p>
     {% endfor %}
 {% endfor %}
 <h2>Blog</h2>
