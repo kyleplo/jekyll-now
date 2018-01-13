@@ -2,10 +2,19 @@
 layout: page
 title: Collection Search Test
 ---
-{% for item in site.demos %}
-<h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
-{% if item.description %} <p>{{ item.description }}</p> {% else %}<p><i>No desciption avaliable...</i></p>{% endif %}
+{% for collection in site.collections %}
+
+  {% assign name = collection.label %}
+
+    <h2>{{ name }}</h2>
+
+    {% for page in site.[name] %}
+      <h3>{{ page.title }}</h3>
+      <p>{{ page.content | markdownify }}</p>
+    {% endfor %}
+
 {% endfor %}
+<h2>Blog</h2>
 {% for post in site.posts %}
       <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
       <p>
