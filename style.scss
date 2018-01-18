@@ -22,6 +22,7 @@ body {
 	background: $white;
   font: 18px/1.4 $helvetica;
   color: $darkGray;
+	margin-top: 75px;
 }
 ::-webkit-scrollbar {width: 1%;}
 ::-webkit-scrollbar-thumb {border-radius: 5px;background: #ee8800  }
@@ -49,7 +50,7 @@ body {
 }
 
 button {background: #ee8800;color:white;border:none;padding: 5px;font-size: 115%}
-input {padding: 5px;font-size: 115%}
+input {padding: 5px;font-size: 115%;border: none;outline: none;background: #eee;}
 button:hover {background: white;color:#ee8800;}
 
 h1, h2, h3, h4, h5, h6 {
@@ -174,12 +175,14 @@ img {
 
 .wrapper-masthead {
   margin-bottom: 50px;
-  background-color: #ee8800
+  background-color: white;
+  border-bottom: solid 3px #ee8800;
+  position: fixed;
+  top: 0px;
+  width: 100%;
 }
 
 .masthead {
-  padding: 20px 0;
-  border-bottom: 1px solid #ee8800;
 
   @include mobile {
     text-align: center;
@@ -203,37 +206,6 @@ img {
   }
 }
 
-.site-info {
-  float: left;
-
-  @include mobile {
-    float: none;
-    display: block;
-    margin: 0 auto;
-  }
-}
-
-.site-name {
-  margin: 0;
-  color: $white;
-  cursor: pointer;
-  font-family: $helveticaNeue;
-  font-weight: 300;
-  font-size: 28px;
-  letter-spacing: 1px;
-}
-
-.sitename a:hover {background-color: white}
-
-.site-description {
-  margin: -5px 0 0 0;
-  color: $white;
-  font-size: 16px;
-
-  @include mobile {
-    margin: 3px 0;
-  }
-}
 
 nav {
   float: right;
