@@ -8,9 +8,7 @@ Hello, I am @kyleplo (say Kie-Ull-Pe-El-Oh).
 
 My test account is [@testkyleplo](https://scratch.mit.edu/users/testkyleplo).
 Thank you for 40 followers on Scratch!
-Check out gamefroot! http://gamefroot.com/members/kyleplo
-
-For updates, please see my [blog](./index.html)
+For updates, please see my [blog](./b)
 
 ## Programming
 
