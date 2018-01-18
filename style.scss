@@ -208,7 +208,6 @@ img {
 
 
 nav {
-  float: right;
   margin-top: 23px; // @TODO: Vertically middle align
   font-family: $helveticaNeue;
   font-size: 18px;
@@ -221,12 +220,12 @@ nav {
   }
 
   a {
-    color: $white;
+    color: #ee8800;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
-    padding: 50px 20px;
-	  &:hover, &:active {background-color: white}
+    padding: 25px 20px;
+	  &:hover, &:active {background-color: #ee8800;color: white}
 
     @include mobile {
       margin: 0 10px;
