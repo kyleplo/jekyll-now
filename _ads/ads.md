@@ -1,3 +1,8 @@
+---
+layout: page
+title: Advertise
+permalink: /advertise/
+---
 Want to advertise on my website? Now you can!
 # How do you know me?
 ## Scratch
