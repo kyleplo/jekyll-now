@@ -2,8 +2,8 @@
 layout: page
 title: Collection Search Test
 ---
-<input type="text" id="query" oninput="q = this.value;search()">
-<select id="area" onchange="a = this.value;search()"><option selected value="result">All Results</option><option value="demo">Demos</option><option value="spotlight">Spotlights</option><option value="blog">Blog Posts</option><option value="github">Github Repositories</option></select>
+<input type="text" id="query" oninput="q = this.value;search();searchParams.set('q', this.value);">
+<select id="area" onchange="a = this.value;search();searchParams.set('q', this.value);"><option selected value="result">All Results</option><option value="demo">Demos</option><option value="spotlight">Spotlights</option><option value="blog">Blog Posts</option><option value="github">Github Repositories</option></select>
 {% for item in site.demos %}
 <div class="demo result">
 <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
@@ -33,7 +33,7 @@ for(var i = 0;i < r.length;i++){
 r[i].setAttribute("hidden","hidden");
 };
 for(var i = 0;i < ra.length;i++){
-if(ra[i].innerHTML.indexOf(q) > -1){ra[i].removeAttribute("hidden")};
+if(ra[i].innerHTML.toLowerCase().indexOf(q.toLowerCase()) > -1){ra[i].removeAttribute("hidden")};
 };
 }
 window.addEventListener("load",function (){
@@ -43,6 +43,8 @@ q = searchParams.get("q");
 if(!q){q = ""};
 a = searchParams.get("a");
 if(!a){a = "result"};
+document.getElementById("query").value = q;
+document.getElementById("area").value = a;
 search();
 });
 </script>
