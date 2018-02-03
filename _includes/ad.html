@@ -1,0 +1,21 @@
+<div style="position:absolute;top:100px;right:20px" hidden id="ad">
+<b style="font-size:small">ADVERTISEMENT</b><br>
+<a id="link" rel="nofollow" href="about:blank" target="blank">
+<img width="100" height="400" id="img">
+</a>
+</div>
+<script>
+// {link: "https://...", img: "ad.png", type: "...", owner: "..."}
+// types: scratch - scratch followed, github - github followed, person - meet in person with money, self - advertise on my own site
+var ads = [
+{link: "https://kyleplo.github.io/advertise/", img: "advertiseonmysite.png", type: "self", owner: "kyleplo"}
+];
+window.addEventListener("load",function (){
+if(location.pathname.length > 1){
+var random = (Math.floor(Math.random() * (ads.length + 2))) - 2;
+if(random > -1){
+document.getElementById("link").href = ads[random].link;
+document.getElementById("img").href = "/user-content/ads/" + ads[random].img;
+document.getElementById("ad").removeAttribute("hidden");
+}}}
+</script>
