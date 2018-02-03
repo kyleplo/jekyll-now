@@ -2,28 +2,47 @@
 layout: page
 title: Collection Search Test
 ---
-<h2>Demos</h2>
+<input type="text" id="query" onchange="q = this.value;search()">
+<select id="area" onchange="a = this.value;search()"><option selected value="result">All Results</option><option value="demo">Demos</option><option value="spotlight">Spotlights</option><option value="blog">Blog Posts</option><option value="github">Github Repositories</option></select>
 {% for item in site.demos %}
-<div class="result">
+<div class="demo result">
 <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
     <p>{% if item.description %}{{ item.description }}{% else %}<i>No description avaliable...</i>{% endif %}</p></div>
 {% endfor %}
-<h2>Spotlights</h2>
 {% for item in site.data.spotlights %}
-<div class="result">
+<div class="spotlight result">
 <h3><a href="{{ item.link }}">{{ item.title }}</a></h3>
     <p>{{ item.text }}</p></div>
 {% endfor %}
-<h2>Blog</h2>
-{% for post in site.posts %}<div class="result">
+{% for post in site.posts %}<div class="blog result">
       <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
       <p>
         {{ post.excerpt }}
       </p>
 </div>
   {% endfor %}
-<h2>Github</h2>
 <div id="place"></div>
-<div id="temp" hidden><div class="result"><h3><a href="[[link]]">[[name]]</a></h3><p>[[desc]]</p></div></div>
+<div id="temp" hidden><div class="github result"><h3><a href="[[link]]">[[name]]</a></h3><p>[[desc]]</p></div></div>
 <script src="https://kyleplo.github.io/auto-website/autowebsite.js"></script>
-<script>autoWebsite("kyleplo","temp","place")</script>
+<script>
+var searchParams, a, q;
+function search(){
+var r = document.getElementsByClassName("result");
+var ra = document.getElementsByClassName(a);
+for(var i = 0;i < r.length;i++){
+r[i].setAttribute("hidden","hidden");
+};
+for(var i = 0;i < ra.length;i++){
+if(ra.indexOf(q) > -1){ra[i].removeAttribute("hidden")};
+};
+}
+window.addEventListener("load",function (){
+autoWebsite("kyleplo","temp","place");
+var searchParams = new URLSearchParams(location.search);
+q = searchParams.get("q");
+if(!q){q = ""};
+a = searchParams.get("a");
+if(!a){a = "result"};
+search();
+});
+</script>
