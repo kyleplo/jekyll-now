@@ -19,13 +19,14 @@
   <body>
     <div class="wrapper-masthead">
       <div class="container">
-        <header class="masthead clearfix">
+        <header class="masthead clearfix" style="z-index:1000">
           <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" width="70" height="70"></a>
-          <nav>
+          <nav style="position:relative;bottom:6px;">
             <a href="{{ site.baseurl }}/blog">Blog</a>
             <a href="{{ site.baseurl }}/about">About</a>
             <a href="{{ site.baseurl }}/github">Github</a>
             <a href="{{ site.baseurl }}/scratch">Scratch</a>
+            <form action="/search" method="GET" style="display:inline;margin-left:15px"><input type="text" name="q" placeholder="Search..." style="width: 120px;"></form>
           </nav>
         </header>
       </div>
