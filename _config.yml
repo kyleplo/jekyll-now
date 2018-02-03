@@ -53,9 +53,9 @@ collections:
   demos:
     output: true
     permalink: /c/:collection/:name
-  demos:
+  ads:
     output: true
-    permalink: /ads/main/:path
+    permalink: /user-content/ads/:path
 #
 # !! You don't need to change any of the configuration flags below !!
 #
