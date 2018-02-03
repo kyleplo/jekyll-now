@@ -33,7 +33,7 @@ for(var i = 0;i < r.length;i++){
 r[i].setAttribute("hidden","hidden");
 };
 for(var i = 0;i < ra.length;i++){
-if(ra.indexOf(q) > -1){ra[i].removeAttribute("hidden")};
+if(ra[i].innerHTML.indexOf(q) > -1){ra[i].removeAttribute("hidden")};
 };
 }
 window.addEventListener("load",function (){
