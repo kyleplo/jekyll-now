@@ -50,7 +50,7 @@ body {
 }
 
 button {background: #ee8800;color:white;border:none;padding: 5px;font-size: 115%}
-input {padding: 5px;font-size: 115%;border: none;outline: none;background: #eee;}
+input, select {padding: 5px;font-size: 115%;border: none;outline: none;background: #eee;}
 button:hover {background: white;color:#ee8800;}
 
 h1, h2, h3, h4, h5, h6 {
