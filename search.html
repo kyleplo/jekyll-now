@@ -1,0 +1,52 @@
+---
+layout: page
+title: Search
+permalink: /search/
+---
+<input type="text" id="query" oninput="q = this.value;search();">
+<select id="area" onchange="a = this.value;search();"><option selected value="result">All Results</option><option value="demo">Demos</option><option value="spotlight">Spotlights</option><option value="blog">Blog Posts</option><option value="github">Github Repositories</option></select>
+{% for item in site.demos %}
+<div class="demo result">
+<h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
+    <p>{% if item.description %}{{ item.description }}{% else %}<i>No description avaliable...</i>{% endif %}</p></div>
+{% endfor %}
+{% for item in site.data.spotlights %}
+<div class="spotlight result">
+<h3><a href="{{ item.link }}">{{ item.title }}</a></h3>
+    <p>{{ item.text }}</p></div>
+{% endfor %}
+{% for post in site.posts %}<div class="blog result">
+      <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+      <p>
+        {{ post.excerpt }}
+      </p>
+</div>
+  {% endfor %}
+<div id="place"></div>
+<div id="temp" hidden><div class="github result"><h3><a href="[[link]]">[[name]]</a></h3><p>[[desc]]</p></div></div>
+<script src="https://kyleplo.github.io/auto-website/autowebsite.js"></script>
+<script>
+var searchParams, a, q;
+function search(){
+document.title = "Search " + q + " on Kyleplo"
+var r = document.getElementsByClassName("result");
+var ra = document.getElementsByClassName(a);
+for(var i = 0;i < r.length;i++){
+r[i].setAttribute("hidden","hidden");
+};
+for(var i = 0;i < ra.length;i++){
+if(ra[i].innerHTML.toLowerCase().indexOf(q.toLowerCase()) > -1){ra[i].removeAttribute("hidden")};
+};
+}
+window.addEventListener("load",function (){
+autoWebsite("kyleplo","temp","place");
+var searchParams = new URLSearchParams(location.search);
+q = searchParams.get("q");
+if(!q){q = ""};
+a = searchParams.get("a");
+if(!a){a = "result"};
+document.getElementById("query").value = q;
+document.getElementById("area").value = a;
+search();
+});
+</script>
