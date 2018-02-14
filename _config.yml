@@ -55,7 +55,7 @@ collections:
     permalink: /c/:collection/:name
   ads:
     output: true
-    permalink: /user-content/ads/:path
+    permalink: /advertise/user-ads/:path
 #
 # !! You don't need to change any of the configuration flags below !!
 #
