@@ -278,6 +278,17 @@ footer {
   padding: 20px 0;
   text-align: center;
 }
+
+.warning {
+    position: fixed;
+    top: 86px;
+    z-index: 1000;
+    padding: 15px;
+    background: #f0d000;
+}
+.warning p {display:inline}
+.warning span {padding-right: 5px;
+    cursor: pointer;}
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
