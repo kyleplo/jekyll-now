@@ -20,6 +20,7 @@ permalink: /search/
       <p>
         {{ post.excerpt }}
       </p>
+    <p>{% for c in post.categories %}<a href="/search?q={{ c }}&a=blog">{{ c }}</a>{% endfor %}</p>
 </div>
   {% endfor %}
 <div id="place"></div>
