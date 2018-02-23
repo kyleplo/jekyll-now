@@ -9,6 +9,10 @@ title: Collection Search Test
 <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
     <p>{% if item.description %}{{ item.description }}{% else %}<i>No description avaliable...</i>{% endif %}</p></div>
 {% endfor %}
+{% for item in site.categories %}
+<div class="category result">
+<h3><a href="/search?q={{ item }}&a=blog">{{ item }}</a></h3></div>
+{% endfor %}
 {% for item in site.data.spotlights %}
 <div class="spotlight result">
 <h3><a href="{{ item.link }}">{{ item.title }}</a></h3>
