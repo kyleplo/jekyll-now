@@ -14,7 +14,7 @@ layout: default
   
   <h3>In the categories:</h3>
   {% for category in page.categories %}
-  <a href="/blog/#{{ category | slugize }}">
+  <a href="/search?q={{ category | slugize }}&a=blog">
     {{ category }}
   </a>
 {% endfor %}
