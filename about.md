@@ -8,7 +8,7 @@ Hello, I am @kyleplo (say Kie-Ull-Pe-El-Oh).
 
 My test account is [@testkyleplo](https://scratch.mit.edu/users/testkyleplo).
 Thank you for 40 followers on Scratch!
-For updates, please see my [blog](./b)
+For updates, please see my [blog](../b)
 
 ## Programming
 
