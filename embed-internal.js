@@ -6,7 +6,8 @@ var links = document.getElementsByTagName("a");
 for(var i = 0;i < links.length;i++){
 if(links[i].href.startsWith(site)){
 links[i].addEventListener("click",function (e){
-window.parent.postMessage({action: "pushState",data: e.target.href}, target);
+e.preventDefault();
+window.parent.postMessage({action: "pushState",data: fixUrl(e.target.href)}, target);
 setTimeout(function (){document.body.innerHTML = "<a href='" + site + "/" + e.target.href + "'>Click here</a>"},3000)
 });
 }else{
@@ -16,3 +17,4 @@ window.parent.postMessage({action: "external",data: e.target.href}, target);
 setTimeout(function (){document.body.innerHTML = "<a href='" + e.target.href + "'>Click here</a>"},3000)
 })
 }}})
+function fixUrl(url){if(url.startsWith("http://")){return "https://" + url.slice(4)}else{return url}}
