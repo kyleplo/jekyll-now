@@ -6,10 +6,8 @@ var links = document.getElementsByTagName("a");
 for(var i = 0;i < links.length;i++){
 if(links[i].href.startsWith(site)){
 links[i].addEventListener("click",function (e){
-e.preventDefault();
 window.parent.postMessage({action: "pushState",data: e.target.href}, target);
-location.href = e.target.href;
-setTimeout(function (){document.body.innerHTML = "<a href='" + site + e.target.href + "'>Click here</a>"},3000)
+setTimeout(function (){document.body.innerHTML = "<a href='" + site + "/" + e.target.href + "'>Click here</a>"},3000)
 });
 }else{
 links[i].addEventListener("click",function (e){
