@@ -19,7 +19,7 @@
 
   <body>
     {% include ad.html %}
-    <div class="warning" style="width:100%" hidden><span onclick="this.parentElement.setAttribute('hidden','hidden');localStorage.warning = warning" title="close">&times;</span><p>In the next week or so, don't be surprised if kyleplogames.com is down. kyleplo.github.io should continue to work.</p></div>
+    <div class="warning" style="width:100%" hidden><span onclick="this.parentElement.setAttribute('hidden','hidden');localStorage.warning = warning" title="close">&times;</span><p>I'm moving to kyleplo.com! <a href="/moving-domains">Learn more...</a></p></div>
     <div class="wrapper-masthead" style="z-index:1000">
       <div class="container">
         <header class="masthead clearfix">
@@ -51,7 +51,7 @@
     <script>
     var warning;
     window.addEventListener("load",function (){
-    warning = "kyleplogames-down-1";
+    warning = "moving2kyleplodotcom";
     if(localStorage.warning === warning){
     document.getElementsByClassName("warning")[0].setAttribute("hidden","hidden");
     }else{
