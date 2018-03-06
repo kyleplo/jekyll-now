@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}</title>
+
+    {% include meta.html %}
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <link rel="icon" href="{{ site.baseurl }}/favicon.PNG" type="image/png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Kyleplo" href="/opensearch.xml" />
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    {% include ad.html %}
+    <div class="wrapper-masthead" style="z-index:1000">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" width="70" height="70"></a>
+          <nav style="position:relative;bottom:6px;">
+<a href="{{ site.baseurl }}/search?q={% if page.title %}{{ page.title }}{% endif %}&a=demos">{% if page.title %}{{ page.title }} {% endif %}Demo</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div id="main" role="main">
+      {{ content }}
+    </div>
+    <div>
+    <h3>Test Console</h3>
+    <input type="text" id="js" placeholder="Enter some javascript to test..."><button onclick="eval(document.getElementById('js').value)">Test</button><br>
+    <button onclick="document.body.setAttirbute('contenteditable','true')">Enable editing</button>
+    </div>
+  </body>
+</html>
