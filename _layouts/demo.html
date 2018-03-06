@@ -19,6 +19,7 @@
 
   <body>
     {% include ad.html %}
+    <div class="warning" style="width:100%"><span onclick="this.parentElement.setAttribute('hidden','hidden')" title="close">&times;</span><p>Do you like my new test console theme? <a href="https://github.com/kyleplo/kyleplo.github.io/issues/new?title=Test+Console+Theme&body=I+like/do+not+like+it">Let me know!</a></p></div>
     <div class="wrapper-masthead" style="z-index:1000">
       <div class="container">
         <header class="masthead clearfix">
@@ -32,10 +33,10 @@
     <div id="main" role="main">
       {{ content }}
     </div>
-    <div>
+    <div class="container">
     <h3>Test Console</h3>
     <input type="text" id="js" placeholder="Enter some javascript to test..."><button onclick="eval(document.getElementById('js').value)">Test</button><br>
-    <button onclick="document.body.setAttirbute('contenteditable','true')">Enable editing</button>
+    <button onclick="document.body.setAttribute('contenteditable','true')">Enable editing</button>
     </div>
   </body>
 </html>
