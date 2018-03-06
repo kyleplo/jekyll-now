@@ -4,7 +4,7 @@ title: CSS Checkboxes
 description: CSS checkboxes that display ✔,✖ and ➖ instead of the defaults
 ---
 <style>
-input[type=checkbox] {-webkit-appearance: none;appearance: none;width: 25px;height: 25px;border: solid 1px #0088ff;outline:none}
+input[type=checkbox] {-webkit-appearance: none;appearance: none;width: 25px;height: 25px;border: solid 1px #0088ff;outline:none;padding:0px;}
 input[type=checkbox]::before {color: red;content: "✖";font-size: large;position: relative;left: 4px;bottom: 1px;transition: 0.5s;opacity: 1}
 input[type=checkbox]::after {color: green;content: "✔";font-size: large;position: relative;right: 10px;bottom: 1px;opacity:0;transition: 0.5s}
 input[type=checkbox]:checked::before {opacity: 0;transform: rotate(90deg)}
