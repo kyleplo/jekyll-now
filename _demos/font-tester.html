@@ -1,0 +1,83 @@
+<!DOCTYPE html><html>
+<head><title>Online Font Image Generator</title>
+<style id="fontcss">
+</style>
+<style>
+html {font-family: Arial}
+input {
+  padding: 5px;
+  font-size: 115%;
+  border: none;
+  outline: none;
+  background: #eee;
+}
+button, input[type=file i] {
+  background: #ee8800;
+  color: white;
+  border: none;
+  padding: 5px;
+  font-size: 115%;
+}
+</style>
+</head>
+<body>
+<div id="start">
+<h1>Font Images</h1>
+<p>Upload a font and get a bitmap image of your font.</p>
+<input type="file" id="file" accept="font/*" onchange="upload()"><br>
+<p>Text:</p>
+<input type="text" id="text" value="Hello world!">
+<p>Font Size (in pixels):</p>
+<input type="number" id="fontSize" value="16">
+<p>Font Color (any CSS color value works):</p>
+<input type="text" id="fontColor" value="black">
+<p>Image Background Color (any CSS color value works):</p>
+<input type="text" id="bgColor" value="transparent"><br><br>
+<button onclick="create()">Create Image</button><br><br>
+</div>
+<div id="done" hidden>
+<h1>All done!</h1>
+<p>Your font should appear below:</p>
+<div style="overflow-x: scroll"><canvas id="canvas" width="50" height="20" oncontextmenu="event.preventDefault()"></canvas></div>
+<p><a id="download" download="font.png"><button>Download</button></a> <button onclick="location.reload()">Start over</button></p>
+</div>
+<script>
+var fontUrl, canvas, ctx;
+function upload(){
+ var read = new FileReader();
+ read.onload = function (){fontUrl = read.result;
+document.getElementById("fontcss").innerHTML = "@font-face {font-family: uploadedFont;src: url(" + fontUrl + ");}";
+};
+ read.readAsDataURL(document.getElementById("file").files[0]);
+}
+function create(){
+canvas = document.getElementById("canvas");
+ctx = canvas.getContext("2d");
+var text  = document.getElementById("text").value;
+var fontSize  = document.getElementById("fontSize").value + "px";
+var fontColor  = document.getElementById("fontColor").value;
+var bgColor = document.getElementById("bgColor").value;
+ctx.font = fontSize + " uploadedFont";
+canvas.height = parseFloat(document.getElementById("fontSize").value) + 10;
+ctx.textAlign = "left";
+ctx.textBaseline = "top";
+ctx.font = fontSize + " uploadedFont";
+canvas.width = ctx.measureText(text).width + 10;
+if(bgColor === "transparent"){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+}else{
+ctx.fillStyle = bgColor;
+ctx.fillRect(0,0,canvas.width,canvas.height);
+};
+ctx.font = fontSize + " uploadedFont";
+ctx.fillStyle = fontColor;
+ctx.fillText(text,5,25);
+document.getElementById("start").setAttribute("hidden","hidden");
+document.getElementById("done").removeAttribute("hidden");
+var download = document.getElementById("download");
+download.href = canvas.toDataURL();
+download.download = text + ".png";
+}
+</script>
+</body>
+</html>
