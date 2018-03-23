@@ -26,6 +26,7 @@ if(j[i].comments > 0){
   replyhtml += '<p>' + p[x].body + '</p>';
   replyhtml += '</div>';
   };
+    document.getElementById("replies-" + issueid).innerHTML = replyhtml;
   });
 }
 commentHtml += '<p><a href="https://github.com/kyleplo/kyleplo.github.io/issues/' + j[i].number + '">Reply on Github</a></p></div>';
