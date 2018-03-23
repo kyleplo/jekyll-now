@@ -2,22 +2,38 @@
 <input type="text" id="comment" oninput="var text= this.value.replace(/  /g,'+');document.getElementById('post').href='https://github.com/kyleplo/kyleplo.github.io/issues/new?title=Comment+for+' + location.pathname + ': ' + text.slice(0,10) + '&body=' + text;document.getElementById('msg').removeAttribute('hidden');">
 <p id="msg" hidden>You will have to confirm the comment with your Github account. I have to moderate your comment before displaying it on this page. Markdown is not supported.</p>
 <a href="https://github.com/kyleplo/kyleplo.github.io/issues/new" id="post" target="_blank"><button>Post comment</button></a>
-  <div id="comments"></div></div>
-<!-- <div class="comment"><img width="50" height="50"><p><a href="https://github.com/octocat">@octocat</a></p><p>hi!</p><p><a>See full conversation</a></p></div> -->
+  <div id="comments" class="container"></div></div>
+<!-- <div class="comment"><img width="50" height="50" style="border-radius: 5px"><p><a href="https://github.com/octocat">@octocat</a></p><p>hi!</p><div id="replies-0"><img width="50" height="50" style="border-radius: 5px"><p><a href="https://github.com/octocat">@octocat</a></p><p>hi!</p></div><p><a>Reply</a></p></div> -->
 <script>
 fetch("https://api.github.com/repos/kyleplo/kyleplo.github.io/issues?state=closed").then(function (r){return r.json();}).then(function (j){
 console.log("Comments loaded!");
 for(var i = 0;i < j.length;i++){
 if(j[i].title.startsWith("Comment for " + location.pathname)){
 var commentHtml = '<div class="comment">';
-commentHtml += '<img width="50" height="50" src="' + j[i].user["avatar_url"] + '">';
+commentHtml += '<img width="50" height="50" style="border-radius: 5px" src="' + j[i].user["avatar_url"] + '">';
 commentHtml += '<p><a href="https://github.com/' + j[i].user["login"] + '">@' + j[i].user["login"] + '</a></p>';
 commentHtml += '<p>' + j[i].body + '</p>';
-if(j[i].comments > 0){commentHtml += '<p><a href="' + j[i]["html_url"] + '">See replies and reply</a></p>';console.log("Replies found.")}else{commentHtml += '<p><a href="' + j[i]["html_url"] + '">Be the first one to reply</a></p>'};
+if(j[i].comments > 0){
+  commentHtml += '<div id="replies-' + j[i].number + '" style="margin-left: 50px"><p>Loading replies...</p></div>';
+  fetch("https://api.github.com/repos/kyleplo/kyleplo.github.io/issues/" + j[i].number + "/comments").then(function (r){return r.json();}).then(function (p){
+  var issueid = p[0]["issue_url"].slice(p[0]["issue_url"].lastIndexOf("/") + 1);
+    console.log("Replies loaded for " + issueid);
+    var replyhtml = "";
+  for(var x = 0;x < p.length;x++){
+  replyhtml += '<div class="reply">';
+  replyhtml += '<img width="50" height="50" style="border-radius: 5px" src="' + p[x].user["avatar_url"] + '">';
+  replyhtml += '<p><a href="https://github.com/' + p[x].user.login + '">@' + p[x].user.login + '</a>';
+  replyhtml += '<p>' + p[x].body + '</p>';
+  replyhtml += '</div>';
+  };
+  });
+}
+commentHtml += '<p><a href="https://github.com/kyleplo/kyleplo.github.io/issues/' + j[i].number + '">Reply on Github</a></p></div>';
+
 document.getElementById('comments').innerHTML += commentHtml;
 console.log("Comment added");
 }else{
-console.warn("Not relevant.");
+console.log("Not relevant.");
 }
 }
 });
