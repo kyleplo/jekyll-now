@@ -11,8 +11,8 @@
 
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-    <link rel="icon" href="{{ site.baseurl }}/favicon.PNG" type="image/png">
-    <link rel="search" type="application/opensearchdescription+xml" title="Kyleplo" href="/opensearch.xml" />
+    <link rel="icon" href="{{ site.baseurl }}/favicon.ico" type="image/png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Kyleplo" href="{{ site.baseurl }}/opensearch.xml" />
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
@@ -23,12 +23,12 @@
     <div class="wrapper-masthead" style="z-index:1000">
       <div class="container">
         <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" width="70" height="70"></a>
+          <a href="/" class="site-avatar"><img src="{{ site.avatar }}" width="70" height="70"></a>
           <nav style="position:relative;bottom:6px;">
-            <a href="{{ site.baseurl }}/blog">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-            <a href="{{ site.baseurl }}/github">Github</a>
-            <a href="{{ site.baseurl }}/scratch">Scratch</a>
+            <a href="/blog">Blog</a>
+            <a href="/about">About</a>
+            <a href="/github">Github</a>
+            <a href="/scratch">Scratch</a>
             <form action="/search" method="GET" style="display:inline;margin-left:15px"><input type="text" name="q" placeholder="Search..." style="width: 120px;"><select id="area" onchange="a = this.value;search();" style="width: 18px;" name="a"><option selected="" value="result">All</option><option value="demo">Demos</option><option value="spotlight">Spotlights</option><option value="blog">Blog</option><option value="github">Repositories</option></select></form>
           </nav>
         </header>
@@ -60,6 +60,5 @@
     }})
     */
     </script>
-    <script src="/embed-internal.js"></script>
   </body>
 </html>
