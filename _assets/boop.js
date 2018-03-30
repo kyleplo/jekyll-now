@@ -1,5 +1,5 @@
 var boop, boop2;
-document.addEventListener("load",function (){
+window.addEventListener("load",function (){
  boop = new Image();
  boop.src = "https://kyleplo.github.io/_assets/boop.png";
  boop.id = "boop";
