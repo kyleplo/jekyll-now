@@ -293,3 +293,12 @@ footer {
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
 @import "svg-icons";
+
+@keyframes boop {
+	0% {left: 50%}
+	20% {left: 10%}
+	60% {left: 90%}
+	80% {left: 50%}
+	90% {top: 40%}
+	100% {top: 50%}
+}
