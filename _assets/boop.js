@@ -13,7 +13,7 @@ document.addEventListener("load",function (){
  if(localStorage.adfree === "-13"){
   bop();
  }
-}
+});
 function bop(){
  boop.removeAttribute("hidden");
  boop2.play();
