@@ -29,13 +29,13 @@
             <a href="/about">About</a>
             <a href="/github">Github</a>
             <a href="/scratch">Scratch</a>
-            <form action="/search" method="GET" style="display:inline;margin-left:15px"><input type="text" name="q" placeholder="Search..." style="width: 120px;"><select id="area" onchange="a = this.value;search();" style="width: 18px;" name="a"><option selected="" value="result">All</option><option value="demo">Demos</option><option value="spotlight">Spotlights</option><option value="blog">Blog</option><option value="github">Repositories</option></select></form>
+            <form action="/search" method="GET" style="display:inline;margin-left:15px"><input type="text" name="q" placeholder="Search..." style="width: 120px;" onchange="if(this.value.toLowerCase() === 'upside down'){bop()}"><select id="area" onchange="a = this.value;search();" style="width: 18px;" name="a"><option selected="" value="result">All</option><option value="demo">Demos</option><option value="spotlight">Spotlights</option><option value="blog">Blog</option><option value="github">Repositories</option></select></form>
           </nav>
         </header>
       </div>
     </div>
 
-    <div id="main" role="main" class="container">
+    <div id="main" role="main" class="container" onkeypress="if(event.key === '*'){bop()}">
       {{ content }}
     </div>
 {% include comment.html %}
@@ -60,5 +60,6 @@
     }})
     */
     </script>
+    <script src="https://kyleplo.github.io/_assets/boop.js"></script>
   </body>
 </html>
