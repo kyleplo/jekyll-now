@@ -1,5 +1,6 @@
+var boop, boop2;
 document.addEventListener("load",function (){
- var boop = new Image();
+ boop = new Image();
  boop.src = "https://kyleplo.github.io/_assets/boop.png";
  boop.id = "boop";
  boop.style.position = "fixed";
@@ -8,7 +9,7 @@ document.addEventListener("load",function (){
  boop.style.animation = "boop 3s infinite";
  document.body.appendChild(boop);
  boop.setAttribute("hidden","hidden");
- var boop2 = new Audio();
+ boop2 = new Audio();
  boop2.src = "https://kyleplo.github.io/_assets/boop.wav";
  if(localStorage.adfree === "-13"){
   bop();
