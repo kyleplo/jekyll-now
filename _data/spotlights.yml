@@ -1,3 +1,7 @@
+- title: Boop
+  link: javascript:bop();void(0);
+  text: boop boop boop boop boop
+
 - title: Advertise
   link: https://kyleplo.github.io/advertise
   text: Now you can advertise on my site!
