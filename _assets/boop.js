@@ -2,6 +2,8 @@ var boop, boop2;
 window.addEventListener("load",function (){
  boop = new Image();
  boop.src = "https://kyleplo.github.io/_assets/boop.png";
+ beep = new Image();
+ beep.src = "https://kyleplo.github.io/_assets/beep.png";
  boop.id = "boop";
  boop.style.position = "fixed";
  boop.style.top = "50%";
@@ -15,7 +17,8 @@ window.addEventListener("load",function (){
   bop();
  }
 });
-function bop(){
+function bop(s){
+ if(s){boop.src = "https://kyleplo.github.io/_assets/beep.png"}else{boop.src = "https://kyleplo.github.io/_assets/boop.png"};
  boop.removeAttribute("hidden");
  boop2.play();
  setTimeout(function (){boop.setAttribute("hidden","hidden");},3000);
