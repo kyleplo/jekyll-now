@@ -1,0 +1,32 @@
+---
+layout: page
+title: Scratch Surprise Counter
+description: How many times was the Scratch surprise <s>licked</s> clicked?
+---
+<h3>Scratch Surprise Counter</h3>
+<p>How many times was the Scratch surprise <s>licked</s> clicked?</p><br>
+<button onclick='
+fetch("https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/surprise",{method: "POST"}).then(function (t){return t.json()}).then(function (j){document.getElementById("clicks").innerHTML = j.surprise})'>Click it!</button><br>
+<p><span id="clicks">...</span> total clicks.</p>
+<p>About <span id="average">...</span> clicks per minute.</p>
+<script>
+var clicks = [];
+var start = 0;
+function check(isFirst){
+fetch("https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/surprise",{method: "POST"}).then(function (t){return t.json()}).then(function (j){
+document.getElementById("clicks").innerHTML = j.surprise
+clicks.push(j.surprise);
+if(!isFirst){
+var sum = 0;
+clicks.forEach(function (i){if(i > start){sum += (i - start)}});
+var average = sum / clicks.length;
+var min = average / 6;
+document.getElementById("average").innerHTML = min
+}else{
+start = j.surprise
+}
+})
+};
+check(true);
+setInterval(check, 10000);
+</script>
