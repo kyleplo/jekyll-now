@@ -44,7 +44,7 @@ autoWebsite("kyleplo","temp","place");
 var searchParams = new URLSearchParams(location.search);
 q = searchParams.get("q");
 if(!q){q = ""};
-if(q === "[ref]"){
+if(q === "referrer"){
 var u = new URL(document.referrer);
 var p = u.pathname;
 p = p.replace(/([/])/g," ");
