@@ -44,6 +44,14 @@ autoWebsite("kyleplo","temp","place");
 var searchParams = new URLSearchParams(location.search);
 q = searchParams.get("q");
 if(!q){q = ""};
+if(q === "[ref]"){
+var u = new URL(document.referrer);
+var p = u.pathname;
+p = p.replace(/([/])/g," ");
+p = p.replace(/([-])/g," ");
+if(p.startsWith(" ")){p = p.slice(1)};
+q = p;
+};
 a = searchParams.get("a");
 if(!a){a = "result"};
 document.getElementById("query").value = q;
