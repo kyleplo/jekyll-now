@@ -7,7 +7,15 @@ permalink: /about/
 Hello, I am @kyleplo (say Kie-Ull-Pe-El-Oh).
 
 My test account is [@testkyleplo](https://scratch.mit.edu/users/testkyleplo).
-Thank you for 40 followers on Scratch!
+
+I also have a few other accounts:
+* TipsButton
+* kylepIo (the second L is an uppercase I)
+* kyleplo-school
+* kyleplo-math6
+* followmystudios
+
+Thank you for 90 followers on Scratch!
 For updates, please see my [blog](../b)
 
 ## Programming
