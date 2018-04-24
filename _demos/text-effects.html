@@ -1,0 +1,70 @@
+---
+layout: demo
+title: CSS Text Effects
+description: Text that uses cool CSS such as shadows and -webkit-mask-image
+---
+<style>
+h1.style {
+font-size: 40px;
+font-weight: 900;
+font-family: Arial
+}
+
+.neon {
+text-shadow: 0 0 5px green, 0 0 10px lime;
+color: green
+}
+
+.rainbow {
+    text-shadow: 0 2px 2px purple, 0 4px 2px blue,0 6px 2px green, 0 8px 2px yellow,0 10px 2px orange, 0 12px 2px red;
+    color: white
+}
+
+.outline {
+    text-shadow: 0 0 3px black;
+    color: white
+}
+
+.swirl {
+    text-shadow: 0 0 3px black;
+    color: white;
+    animation: swirl infinite 1s
+}
+@keyframes swirl {
+0% {text-shadow: 2px 0 3px black;}
+25% {text-shadow: 0 2px 3px black;}
+50% {text-shadow: -2px 0 3px black;}
+75% {text-shadow: 0 -2px 3px black;}
+100% {text-shadow: 2px 0 3px black;}
+}
+.smudge {
+    text-shadow: 0 0 5px red, 3px 0 5px red,6px 0 5px red, -3px 0 5px red,-6px 0 5px red;
+    color: red
+}
+
+@keyframes alert {
+0% {text-shadow: 0 0 5px white,0 0 10px white;}
+50% {text-shadow: 0 0 5px yellow,0 0 10px red;}
+100% {text-shadow: 0 0 5px white,0 0 10px white;}
+}
+.alert {
+    text-shadow: 0 0 5px white,0 0 10px white;
+    color: white;
+    animation: alert infinite 1s 3s
+}
+.rain {
+-webkit-mask-image: url(https://images.pexels.com/photos/268883/pexels-photo-268883.jpeg)
+}
+.rain-animated {
+-webkit-mask-image: url(https://media.giphy.com/media/3ohhwutQL0CDTq3kKA/source.gif)
+}
+</style>
+<p>View source for code. Many inspired by <a href="https://developers.google.com/fonts/docs/getting_started#enabling_font_effects_beta">Google Font Effects</a></p>
+<h1 class="style neon">Neon!</h1>
+<h1 class="style rainbow">Rainbow</h1>
+<h1 class="style outline">Outline</h1>
+<h1 class="style swirl">Swirl</h1>
+<h1 class="style smudge">Smudge</h1>
+<h1 class="style alert">Alert</h1>
+<h1 class="style rain">Rain</h1>
+<h1 class="style rain-animated">Rain Animated</h1>
