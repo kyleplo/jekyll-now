@@ -1,0 +1,76 @@
+---
+layout: demo
+title: CSS Color Grid
+description: I wanted to see if I could build an 8x6 color grid using only CSS colors.
+---
+<table>
+  <tr>
+    <td>black</td>
+    <td>dimgrey</td>
+    <td>grey</td>
+    <td>slategrey</td>
+    <td>darkgrey</td>
+    <td>lightgrey</td>
+    <td>gainsboro</td>
+    <td>white</td>
+  </tr>
+    <tr>
+    <td>indianred</td>
+    <td>wheat</td>
+    <td>lightyellow</td>
+    <td>palegreen</td>
+    <td>lightcyan</td>
+    <td>lightsteelblue</td>
+    <td>thistle</td>
+    <td>pink</td>
+  </tr>
+      <tr>
+    <td>crimson</td>
+    <td>sandybrown</td>
+    <td>khaki</td>
+    <td>yellowgreen</td>
+    <td>lightskyblue</td>
+    <td>cornflowerblue</td>
+    <td>darkorchid</td>
+    <td>plum</td>
+  </tr>
+  <tr>
+    <td>red</td>
+    <td>orange</td>
+    <td>yellow</td>
+    <td>green</td>
+    <td>dodgerblue</td>
+    <td>blue</td>
+    <td>purple</td>
+    <td>hotpink</td>
+  </tr>
+    <tr>
+    <td>firebrick</td>
+    <td>coral</td>
+    <td>gold</td>
+    <td>forestgreen</td>
+    <td>mediumturquoise</td>
+    <td>mediumblue</td>
+    <td>rebeccapurple</td>
+    <td>magenta</td>
+  </tr>
+   <tr>
+    <td>maroon</td>
+    <td>chocolate</td>
+    <td>goldenrod</td>
+    <td>olivedrab</td>
+    <td>teal</td>
+    <td>midnightblue</td>
+    <td>indigo</td>
+    <td>mediumvioletred</td>
+  </tr>
+</table>
+<script>
+window.addEventListener("load",function (){
+var td = document.getElementsByTagName("td");
+for(var i = 0;i < td.length;i++){
+td[i].style.backgroundColor = td[i].innerHTML;
+td[i].setAttribute("title",td[i].innerHTML);
+}
+})
+</script>
