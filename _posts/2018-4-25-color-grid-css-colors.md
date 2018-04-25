@@ -3,7 +3,7 @@ layout: post
 title: Color grid with only CSS colors?
 categories: css colors svg
 ---
-[View the demo that goes with this post](../c/demos/css-color-grid)
+[View the demo that goes with this post](https://kyleplo.github.io/c/demos/css-color-grid)
 
 When I first learn SVG, it took me a while to figure out how to use any colors other than the default CSS colors (`red`,`blue`,`alicewhite`, etc.) Now, of course I know you can use other colors, but I wanted to see if I could build an 8x6 color grid using only CSS colors. Here is how it would look:
 
