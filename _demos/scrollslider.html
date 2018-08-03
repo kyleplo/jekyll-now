@@ -1,0 +1,44 @@
+<style>
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: red; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+}
+</style>
+<div style="width:200px;overflow-x:scroll" id="slider">
+<div style="width:2000px;height:1px">
+</div>
+</div>
+<p id="value">0</p>
+<p>Min: <input type="number" id="min" value="0"><br>Max: <input type="number" id="max" value="100"><br>Decimal Places: <input type="number" id="step" value="0"></p>
+<script>
+window.addEventListener("load",function (){
+document.getElementById("slider").addEventListener("scroll",function (e){
+var min = parseFloat(document.getElementById("min").value);
+var max = parseFloat(document.getElementById("max").value);
+var step = parseFloat(document.getElementById("step").value);
+var dec = parseFloat(e.target.scrollLeft / 1800);
+var num = min;
+var range = max - min;
+num = num + (dec * range);
+num = (Math.round(num * Math.pow(10, step))) / Math.pow(10, step);
+document.getElementById("value").innerHTML = num;
+})
+})
+</script>
