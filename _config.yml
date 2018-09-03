@@ -52,10 +52,10 @@ baseurl: ""
 collections:
   demos:
     output: true
-    permalink: /c/:collection/:name
+    permalink: /c/:collection/:path
   games:
     output: true
-    permalink: /c/:collection/:name
+    permalink: /c/:collection/:path
   ads:
     output: true
     permalink: /advertise/user-ads/:path
