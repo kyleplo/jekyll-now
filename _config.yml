@@ -53,7 +53,7 @@ collections:
   demos:
     output: true
     permalink: /c/:collection/:name
-  tools:
+  games:
     output: true
     permalink: /c/:collection/:name
   ads:
