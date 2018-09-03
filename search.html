@@ -23,6 +23,11 @@ permalink: /search/
     <p>{% for c in post.categories %}<a href="/search?q={{ c }}&a=blog">{{ c }}</a>{% endfor %}</p>
 </div>
   {% endfor %}
+{% for item in site.games %}
+<div class="game result">
+<h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
+    <p>{% if item.description %}{{ item.description }}{% else %}<i>No description avaliable...</i>{% endif %}</p></div>
+{% endfor %}
 <div id="place"></div>
 <div id="temp" hidden><div class="github result"><h3><a href="[[link]]">[[name]]</a></h3><p>[[desc]]</p></div></div>
 <script src="https://kyleplo.github.io/auto-website/autowebsite.js"></script>
