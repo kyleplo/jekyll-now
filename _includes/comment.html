@@ -5,6 +5,7 @@
   <div id="comments" class="container"></div></div>
 <!-- <div class="comment"><img width="50" height="50" style="border-radius: 5px"><p><a href="https://github.com/octocat">@octocat</a></p><p>hi!</p><div id="replies-0"><img width="50" height="50" style="border-radius: 5px"><p><a href="https://github.com/octocat">@octocat</a></p><p>hi!</p></div><p><a>Reply</a></p></div> -->
 <script>
+if(location.pathname !== "/" && location.pathname !== "/index" && location.pathname !== "/index.html" && location.pathname !== "/blog/"){
 fetch("https://api.github.com/repos/kyleplo/kyleplo.github.io/issues?state=closed").then(function (r){return r.json();}).then(function (j){
 console.log("Comments loaded!");
 for(var i = 0;i < j.length;i++){
@@ -38,4 +39,5 @@ console.log("Not relevant.");
 }
 }
 });
+}
 </script>
