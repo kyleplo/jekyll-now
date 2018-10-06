@@ -14,8 +14,15 @@ I also have a few other accounts:
 * kyleplo-school
 * kyleplo-math6
 * followmystudios
+* ScratchOnMissingUser
 
-Thank you for 90 followers on Scratch!
+### Family Member's Accounts
+
+* katedandelion (sister)
+* MakeOneUp11 (3 cousins)
+* brende123 (cousin)
+
+Thank you for 200 followers on Scratch!
 For updates, please see my [blog](../b)
 
 ## Programming
