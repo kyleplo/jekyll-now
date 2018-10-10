@@ -63,7 +63,7 @@ window.addEventListener("load",function (){
   };
   var data = [];
   var div = document.getElementById("data").children;
-  for(var i = 0;i < div.length, i++){
+  for(var i = 0;i < div.length; i++){
     if(searchType === "tag" && div[i].getElementByClassName("tags")[0].innerHTML.indexOf(parts[1]) > -1){data.push({title: div[i].getAttribute("data-title"),url: div[i].getAttribute("data-url")})};
     if(searchType === "category" && div[i].getElementByClassName("categories")[0].innerHTML.indexOf(parts[1]) > -1){data.push({title: div[i].getAttribute("data-title"),url: div[i].getAttribute("data-url")})};
     if(searchType === "author" && div[i].getAttribute("data-author").toLowerCase() === parts[i].toLowerCase()){data.push({title: div[i].getAttribute("data-title"),url: div[i].getAttribute("data-url")})};
