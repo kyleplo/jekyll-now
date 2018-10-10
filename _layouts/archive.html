@@ -1,0 +1,85 @@
+---
+layout: default
+---
+<section id="archive">
+<p>Loading archive...</p>
+</section>
+<div id="data" hidden>
+{% for post in site.posts %}
+  <div class="result" data-url="{{ post.url | relative_url }}" data-title="{{ post.title }}" data-author="{{ post.author }}" data-date="{{ page.date | date_to_xmlschema }}">
+    <p class="excerpt">{{ post.excerpt }}</p>
+    <p class="tags">{% for c in post.tags %}{{ c }} {% endfor %}</p>
+    <p class="categories">{% for c in post.categories %}{{ c }} {% endfor %}</p>
+  </div>
+  {% endfor %}
+</div>
+<script>
+function parsePostDate(date){
+  var sliced = date.slice(0,10).split("-");
+  var pd = ["","",""];
+  pd[0] = sliced[1];
+  pd[1] = sliced[2];
+  pd[2] = sliced[0];
+  return pd;
+}
+function checkDatesMatch(pd,sd){
+  if(pd[2] === sd[2] || !sd[2]){
+    if(pd[0] === sd[0] || !sd[0]){
+      if(pd[1] === sd[1] || !sd[1]){
+        return true;
+      }else{
+        return false;
+      };
+    }else{
+      return false;
+    };
+  }else{
+    return false;
+  };
+}
+function formatUrlDate(parts){
+  if(parts.length === 3){
+    return parts;
+  }else if(parts.length === 2){
+    return [parts[0], undefined, parts[1]];
+  }else if(parts.length === 1){
+    return [undefined, undefined, parts[0]];
+  };
+}
+window.addEventListener("load",function (){
+  var parts = location.href.slice(location.href.lastIndexOf("archive/")+ 9).split("/");
+  var searchType = (parts[0] === "tag" ? "tag" : (parts[0] === "category" ? "category" : (parts[0] === "author" ? "author" :  (parts[0] === "search" ? "search" : "date"))));
+  history.replaceState({}, "", "/archive/" + parts.join("/"));
+  if(searchType === "tag"){
+    document.title = "Posts tagged " + parts[1] + " | {{ site.title }}";
+  }else if(searchType === "category"){
+    document.title = "Posts in the " + parts[1] + " category | {{ site.title }}";
+  }else if(searchType === "author"){
+    document.title = "Posts written by " + parts[1] + " | {{ site.title }}";
+  }else if(searchType === "search"){
+    document.title = "Search for " + parts[1] + " | {{ site.title }}";
+  }else{
+    document.title = "Posts written on " + parts.join("/") + " | {{ site.title }}";
+  };
+  var data = [];
+  var div = document.getElementById("data").children;
+  for(var i = 0;i < div.length, i++){
+    if(searchType === "tag" && div[i].getElementByClassName("tags")[0].innerHTML.indexOf(parts[1]) > -1){data.push({title: div[i].getAttribute("data-title"),url: div[i].getAttribute("data-url")})};
+    if(searchType === "category" && div[i].getElementByClassName("categories")[0].innerHTML.indexOf(parts[1]) > -1){data.push({title: div[i].getAttribute("data-title"),url: div[i].getAttribute("data-url")})};
+    if(searchType === "author" && div[i].getAttribute("data-author").toLowerCase() === parts[i].toLowerCase()){data.push({title: div[i].getAttribute("data-title"),url: div[i].getAttribute("data-url")})};
+    if(searchType === "search" && div[i].getElementByClassName("excerpt")[0].innerHTML.indexOf(parts[1]) > -1){data.push({title: div[i].getAttribute("data-title"),url: div[i].getAttribute("data-url")})};
+    if(searchType === "date" && checkDatesMatch(parsePostDate(div[i].getAttribute("data-date")), formatUrlDate(parts))){data.push({title: div[i].getAttribute("data-title"),url: div[i].getAttribute("data-url")})};
+  };
+  if(data.length === 0){
+    document.getElementById("archive").innerHTML = "<p>No posts were found for this " + searchType + ".</p>"
+  }else if(data.length === 1){
+    location.href = data[0].url;
+  }else{
+    var html = "";
+    for(var i = 0;i < data.length;i++){
+      html += "<p><a href='" + data[i].url + "'>" + data[i].title + "</a></p>";
+    };
+    document.getElementById("archive").innerHTML = html;
+  };
+})
+</script>
