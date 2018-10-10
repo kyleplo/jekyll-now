@@ -2,4 +2,4 @@
 layout: default
 ---
 {{ content }}
-<script>window.addEventListener("load",function (){if(location.href.indexOf("archive")>-1){location.href={{ "/" | relative_url }} + "archive/#" + location.href.slice(location.href.lastIndexOf("archive/")+ 8)}})</script>
+<script>window.addEventListener("load",function (){if(location.href.indexOf("archive")>-1){location.href="{{ "/" | relative_url }}archive/#" + location.href.slice(location.href.lastIndexOf("archive/")+ 8)}})</script>
