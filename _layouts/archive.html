@@ -6,7 +6,7 @@ layout: default
 </section>
 <div id="data" hidden>
 {% for post in site.posts %}
-  <div class="result" data-url="{{ post.url | relative_url }}" data-title="{{ post.title }}" data-author="{{ post.author }}" data-date="{{ page.date | date_to_xmlschema }}">
+  <div class="result" data-url="{{ post.url | relative_url }}" data-title="{{ post.title }}" data-author="{{ post.author }}" data-date="{{ post.date | date_to_xmlschema }}">
     <p class="excerpt">{{ post.excerpt }}</p>
     <p class="tags">{% for c in post.tags %}{{ c }} {% endfor %}</p>
     <p class="categories">{% for c in post.categories %}{{ c }} {% endfor %}</p>
