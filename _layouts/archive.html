@@ -49,7 +49,7 @@ function formatUrlDate(parts){
 window.addEventListener("load",function (){
   var parts = location.href.slice(location.href.lastIndexOf("archive/")+ 9).split("/");
   var searchType = (parts[0] === "tag" ? "tag" : (parts[0] === "category" ? "category" : (parts[0] === "author" ? "author" :  (parts[0] === "search" ? "search" : "date"))));
-  if(searchType.startsWith("search?q=") && !parts[1]){
+  if(parts[0].startsWith("search?q=") && !parts[1]){
     parts[1] = location.search.slice(4);
     searchType = "search";
   };
