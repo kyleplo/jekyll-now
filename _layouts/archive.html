@@ -49,6 +49,9 @@ function formatUrlDate(parts){
 window.addEventListener("load",function (){
   var parts = location.href.slice(location.href.lastIndexOf("archive/")+ 9).split("/");
   var searchType = (parts[0] === "tag" ? "tag" : (parts[0] === "category" ? "category" : (parts[0] === "author" ? "author" :  (parts[0] === "search" ? "search" : "date"))));
+  if(searchType === "search" && !parts[1]){
+    parts[1] = location.search.slice(4);
+  };
   history.replaceState({}, "", "/archive/" + parts.join("/"));
   if(searchType === "tag"){
     document.title = "Posts tagged " + parts[1] + " | {{ site.title }}";
@@ -67,7 +70,7 @@ window.addEventListener("load",function (){
     if(searchType === "tag" && div[i].getElementsByClassName("tags")[0].innerHTML.indexOf(parts[1]) > -1){data.push({title: div[i].getAttribute("data-title"),url: div[i].getAttribute("data-url")})};
     if(searchType === "category" && div[i].getElementsByClassName("categories")[0].innerHTML.indexOf(parts[1]) > -1){data.push({title: div[i].getAttribute("data-title"),url: div[i].getAttribute("data-url")})};
     if(searchType === "author" && div[i].getAttribute("data-author").toLowerCase() === parts[i].toLowerCase()){data.push({title: div[i].getAttribute("data-title"),url: div[i].getAttribute("data-url")})};
-    if(searchType === "search" && div[i].getElementsByClassName("excerpt")[0].innerHTML.indexOf(parts[1]) > -1){data.push({title: div[i].getAttribute("data-title"),url: div[i].getAttribute("data-url")})};
+    if(searchType === "search" && div[i].getElementsByClassName("excerpt")[0].innerHTML.toLowerCase().indexOf(parts[1].toLowerCase()) > -1){data.push({title: div[i].getAttribute("data-title"),url: div[i].getAttribute("data-url")})};
     if(searchType === "date" && checkDatesMatch(parsePostDate(div[i].getAttribute("data-date")), formatUrlDate(parts))){data.push({title: div[i].getAttribute("data-title"),url: div[i].getAttribute("data-url")})};
   };
   if(data.length === 0){
