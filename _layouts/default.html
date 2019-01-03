@@ -19,7 +19,7 @@
 
   <body>
     {% include ad.html %}
-    <div class="warning" style="width:100%" hidden><span onclick="this.parentElement.setAttribute('hidden','hidden');localStorage.warning = warning" title="close">&times;</span><p></p></div>
+    <div class="warning" style="width:100%" hidden><span onclick="this.parentElement.setAttribute('hidden','hidden');localStorage.warning = warning" title="close">&times;</span><p> Want to revert back to Scratch 2.0? Try <a href="https://kyleplo.com/scratch2revert.user.js">this userscript!</a></p></div>
     <div class="wrapper-masthead" style="z-index:1000">
       <div class="container">
         <header class="masthead clearfix">
@@ -49,16 +49,16 @@
 
     {% include analytics.html %}
     <script>
-      /*
+      
     var warning;
     window.addEventListener("load",function (){
-    warning = "moving2kyleplodotcom";
+    warning = "scratch2revert";
     if(localStorage.warning === warning){
     document.getElementsByClassName("warning")[0].setAttribute("hidden","hidden");
     }else{
     document.getElementsByClassName("warning")[0].removeAttribute("hidden");
     }})
-    */
+    
     </script>
     <script src="https://kyleplo.com/_assets/boop.js"></script>
   </body>
