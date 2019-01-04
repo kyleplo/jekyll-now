@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Scratch 2.0 Revert
 // @namespace    https://kyleplo.com/
-// @version      0.2
+// @version      0.3
 // @description  Change some things in Scratch 3.0 to make it more like 2.0.
 // @author       kyleplo
 // @match        https://scratch.mit.edu/projects/*
@@ -12,22 +12,25 @@
 (function() {
     'use strict';
 
-    // Code copied from Theme3 userscript - thanks @NitroCipher
+    // Some code copied from Theme3 userscript - thanks @NitroCipher
     var style = document.createElement('style');
     var styleAppend;
     var categories = ["null", "motion", "looks", "sounds", "events", "control", "sensing", "operators", "data", "list", "pen", "more"];
         var colors = ["null", "null", "null", "null", "#ffab19", "#e6bf00", "null", "null", "null", "null", "null", "null"];
     categories.forEach(styleColor);
     style.innerHTML = `
-    .gui_editor-wrapper_nDYcj {
+    .gui > div:nth-child(3) > div > div:nth-child(1) {
      order: 2;
     }
-    .sprite-selector_sprite-selector_2KgCX {
+    .gui:nth-child(3) > div:nth-child(2) {
      order: 2;
     }
     .injectionDiv {
      zoom: 0.9;
      overflow: hidden!important
+    }
+    li img {
+     display: none;
     }
     .blocklyWidgetDiv, .blocklyDropDownDiv {
      zoom: 0.9;
@@ -65,5 +68,4 @@
             styleAppend = styleAppend + `.scratchCategoryMenu:nth-child(`+(item+1)+`) .scratchCategoryItemBubble {background-color: `+colors[4]+`!important}`;
         }
     }
-    // End copied code
 })();
