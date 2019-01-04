@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Scratch 2.0 Revert
 // @namespace    https://kyleplo.com/
-// @version      0.1
+// @version      0.2
 // @description  Change some things in Scratch 3.0 to make it more like 2.0.
 // @author       kyleplo
 // @match        https://scratch.mit.edu/projects/*
@@ -12,8 +12,6 @@
 (function() {
     'use strict';
 
-    document.getElementsByClassName("gui_editor-wrapper_2DYcj")[0].style.order = "2";
-    document.getElementsByClassName("sprite-selector_sprite-selector_2KgCX")[0].style.order = "2";
     // Code copied from Theme3 userscript - thanks @NitroCipher
     var style = document.createElement('style');
     var styleAppend;
@@ -21,6 +19,12 @@
         var colors = ["null", "null", "null", "null", "#ffab19", "#e6bf00", "null", "null", "null", "null", "null", "null"];
     categories.forEach(styleColor);
     style.innerHTML = `
+    .gui_editor-wrapper_nDYcj {
+     order: 2;
+    }
+    .sprite-selector_sprite-selector_2KgCX {
+     order: 2;
+    }
     .injectionDiv {
      zoom: 0.9;
      overflow: hidden!important
