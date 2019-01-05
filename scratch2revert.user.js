@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Scratch 2.0 Revert
 // @namespace    https://kyleplo.com/
-// @version      0.3
-// @description  Change some things in Scratch 3.0 to make it more like 2.0.
+// @version      0.4
+// @description  Change some things in Scratch 3.0 to make it more like 2.0. NEW IN THIS VERSION: Fixes context menu position, moves backdrop menu back.
 // @author       kyleplo
 // @match        https://scratch.mit.edu/projects/*
 // @grant        none
@@ -22,8 +22,13 @@
     .gui > div:nth-child(3) > div > div:nth-child(1) {
      order: 2;
     }
-    .gui:nth-child(3) > div:nth-child(2) {
+    .gui > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
      order: 2;
+    }
+    .blocklyContextMenu {
+     position: relative;
+     top: 35px;
+     left: 85px;
     }
     .injectionDiv {
      zoom: 0.9;
