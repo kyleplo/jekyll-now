@@ -5,5 +5,5 @@ Kyleplo from Scratch, Github and more!
 </Description>
 <InputEncoding>UTF-8</InputEncoding>
 <Image width="16" height="16" type="image/x-icon">https://kyleplo.github.io/favicon.PNG</Image>
-<Url type="text/html" method="get" template="https://kyleplo.github.io/search?q={searchTerms}&a=result"/>
+<Url type="text/html" method="get" template="https://kyleplo.github.io/search?q={searchTerms}&a=result&utm_source=opensearch"/>
 </OpenSearchDescription>
