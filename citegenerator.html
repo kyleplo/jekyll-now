@@ -7,16 +7,40 @@
 <h2>Citation Generator</h2>
 <p>Cite a URL: <input type="url" id="url"> <button id="submit">Submit</button></p>
 <p><ul id="results"><ul></p>
+<section id="edit" hidden>
+ <h3>Edit the Result</h3>
+ <p>Fill in any incorrect or missing information</p>
+ <p><input type="text" id="title" placeholder="Title"></p>
+ <p><input type="text" id="author" placeholder="Author"></p>
+ <p><input type="text" id="publisher" placeholder="Publisher"></p>
+ <p><input type="text" id="date" placeholder="Year"></p>
+ <p><button id="go">Go!</button></p>
+</section>
 <script>
+var url;
 window.addEventListener("load",function (){
  document.getElementById("submit").addEventListener("click", function (){
-  var url = document.getElementById("url").value;
+  url = document.getElementById("url").value;
   document.getElementById("url").value = "";
   fetch("https://bony-middle.glitch.me/getcit?u=" + url).then(function (r){return r.json()}).then(function (j){
-   var li = document.createElement("LI");
-   li.innerHTML = j.citation;
-   document.getElementById("results").append(li);
+   url = j.url;
+   document.getElementById("title") = j.title;
+   document.getElementById("author") = j.author;
+   document.getElementById("publisher") = j.publisher;
+   document.getElementById("date") = j.date;
+   document.getElementById("edit").removeAttribute("hidden");
   })
+ })
+ document.getElementById("go").addEventListener("click",function (){
+  document.getElementById("edit").setAttribute("hidden","hidden");
+  var title = document.getElementById("title");
+  var author = document.getElementById("author");
+  var publisher = document.getElementById("publisher");
+  var date = document.getElementById("date");
+  var cite = '"' + title + '" ' + publisher + ', ' + (author !== "" ? author : "Author unknown") + ', ' + (date !== "" ? date : "Date unknown") + ', ' + url;
+  var li = document.createElement("LI");
+  li.innerHTML = cite;
+  document.getElementById("results").append(li);
  })
 })
 </script>
