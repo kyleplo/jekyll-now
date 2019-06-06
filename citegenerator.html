@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<title>Citation Generator</title>
+</head>
+<body>
+<h2>Citation Generator</h2>
+<p>Cite a URL: <input type="url" id="url"> <button id="submit">Submit</button></p>
+<p><ul id="results"><ul></p>
+<script>
+window.addEventListener("load",function (){
+ document.getElementById("submit").addEventListener("click", function (){
+  var url = document.getElementById("url").value;
+  document.getElementById("url").value = "";
+  fetch("https://bony-middle.glitch.me/getcit?u=" + url).then(function (r){return r.json()}).then(function (j){
+   var li = document.createElement("LI");
+   li.innerHTML = j.citation;
+   document.getElementById("results").append(li);
+  })
+ })
+})
+</script>
+</body>
+</html>
