@@ -2,6 +2,11 @@
 <html>
 <head>
 <title>Citation Generator</title>
+<style>
+ body {
+  font-family: Arial
+ }
+</style>
 </head>
 <body>
 <h2>Citation Generator</h2>
@@ -33,10 +38,10 @@ window.addEventListener("load",function (){
  })
  document.getElementById("go").addEventListener("click",function (){
   document.getElementById("edit").setAttribute("hidden","hidden");
-  var title = document.getElementById("title");
-  var author = document.getElementById("author");
-  var publisher = document.getElementById("publisher");
-  var date = document.getElementById("date");
+  var title = document.getElementById("title").value;
+  var author = document.getElementById("author").value;
+  var publisher = document.getElementById("publisher").value;
+  var date = document.getElementById("date").value;
   var cite = '"' + title + '" ' + publisher + ', ' + (author !== "" ? author : "Author unknown") + ', ' + (date !== "" ? date : "Date unknown") + ', ' + url;
   var li = document.createElement("LI");
   li.innerHTML = cite;
