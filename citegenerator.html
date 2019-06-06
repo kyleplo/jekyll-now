@@ -24,10 +24,10 @@ window.addEventListener("load",function (){
   document.getElementById("url").value = "";
   fetch("https://bony-middle.glitch.me/getcit?u=" + url).then(function (r){return r.json()}).then(function (j){
    url = j.url;
-   document.getElementById("title") = j.title;
-   document.getElementById("author") = j.author;
-   document.getElementById("publisher") = j.publisher;
-   document.getElementById("date") = j.date;
+   document.getElementById("title").value = j.title;
+   document.getElementById("author").value = j.author;
+   document.getElementById("publisher").value = j.publisher;
+   document.getElementById("date").value = j.date;
    document.getElementById("edit").removeAttribute("hidden");
   })
  })
