@@ -32,7 +32,7 @@ section#edit div {
     width: 60%;
 }
  
- section#edit {
+ section {
     position: fixed;
     top: 0;
     left: 0;
@@ -45,7 +45,12 @@ section#edit div {
 <body>
 <h2>Citation Generator</h2>
 <p>Cite a URL: <input type="url" id="url"> <button id="submit">Submit</button></p>
-<ul id="results"><ul>
+<ul id="results"></ul>
+ <section id="loading">
+ <div>
+  <p>Loading...</p>
+ </div>
+ </section>
 <section id="edit" hidden>
  <div>
  <h3>Edit the Result</h3>
@@ -58,12 +63,24 @@ section#edit div {
   </div>
 </section>
 <script>
+function start(){
+ fetch("https://bony-middle.glitch.me").then(function (r){return r.text()}).then(function (t){
+  if(t === '{"ok":true}'){
+   document.getElementById("loading").setAttribute("hidden","hidden");
+  }else{
+   setTimeout(start, 3000);
+  };
+ })
+}
 var url;
 window.addEventListener("load",function (){
+ start();
  document.getElementById("submit").addEventListener("click", function (){
+  document.getElementById("loading").removeAttribute("hidden");
   url = document.getElementById("url").value;
   document.getElementById("url").value = "";
   fetch("https://bony-middle.glitch.me/getcit?u=" + url).then(function (r){return r.json()}).then(function (j){
+   document.getElementById("loading").setAttribute("hidden","hidden");
    url = j.url;
    document.getElementById("title").value = j.title;
    document.getElementById("author").value = j.author;
