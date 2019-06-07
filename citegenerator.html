@@ -81,7 +81,7 @@ window.addEventListener("load",function (){
   url = document.getElementById("url").value;
   isBook = !url.toLowerCase().startsWith("http");
   document.getElementById("url").value = "";
-  fetch((isBook ? "https://bony-middle.glitch.me/getbookcit?u=" + url : "https://bony-middle.glitch.me/getcit?u=" + url)).then(function (r){return r.json()}).then(function (j){
+  fetch((isBook ? "https://bony-middle.glitch.me/getbookcit?i=" + url : "https://bony-middle.glitch.me/getcit?u=" + url)).then(function (r){return r.json()}).then(function (j){
    document.getElementById("loading").setAttribute("hidden","hidden");
    url = j.url;
    document.getElementById("title").value = j.title;
