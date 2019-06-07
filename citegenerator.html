@@ -99,7 +99,7 @@ window.addEventListener("load",function (){
   var date = document.getElementById("date").value;
   var cite;
   if(isBook){
-   cite = (author !== "" ? author : "Author unknown") + ', ' + '"' + title + '". ' + publisher + ', ' + (date !== "" ? date : "Date unknown"));
+   cite = ((author !== "" ? author : "Author unknown") + ', ' + '"' + title + '". ' + publisher + ', ' + (date !== "" ? date : "Date unknown"));
   }else{
    cite = '"' + title + '" ' + publisher + ', ' + (author !== "" ? author : "Author unknown") + ', ' + (date !== "" ? date : "Date unknown") + ', ' + url;
   };
